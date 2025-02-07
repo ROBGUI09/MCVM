@@ -9,6 +9,7 @@ import li.netcube.mcvm.MCVM;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -140,7 +141,7 @@ public class VirtualMachine {
             commandLine.add(":" + (VNCPort - 5900) + ",password");
 
             if (!MCVM.modConfig.getString("VirtualMachine", "customArguments", "").equals("")) {
-                commandLine.add(MCVM.modConfig.getString("VirtualMachine", "customArguments", ""));
+                commandLine.addAll(Arrays.asList(MCVM.modConfig.getString("VirtualMachine", "customArguments", "").trim().split(" ")));
             }
 
             if (this.nic != null) {
