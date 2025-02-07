@@ -39,7 +39,7 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: Artifact
-        path: lib/build/libs/*.jar # or path/to/artifact
+        path: build/libs/*.jar # or path/to/artifact
 
       
 
